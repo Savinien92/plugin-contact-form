@@ -1,0 +1,11 @@
+#modalContentHeader {
+    display: none;
+}
+
+div[ng-app="mainApp"] {
+    display: none;
+}
+
+.validate {
+    display: block;
+}

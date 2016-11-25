@@ -1,0 +1,88 @@
+#formContactAngular .form-table {
+    background-color: #FFF;
+    border: 1px solid #E8E8E8;
+    margin-bottom: 10px;
+}
+
+#formContactAngular .form-table th,
+#formContactAngular .form-table td {
+    padding: 15px;
+    width: auto;
+}
+
+#formContactAngular .form-table tbody tr:hover {
+    background-color: #E8E8E8;
+}
+
+#formContactAngular .last-tr {
+    background-color: #E8E8E8;
+}
+
+#formContactAngular .last-tr:hover {
+    background-color: #E8E8E8;
+}
+
+#formContactAngular p.req-field {
+    margin-left: 10px;
+    display: inline-block;
+    color: lightcoral;
+}
+
+#formContactAngular span.req-field {
+    color: lightcoral;
+}
+
+#formContactAngular input[type="radio"] + input[type="radio"] {
+    margin-left: 20px;
+}
+
+#formContactAngular .flat-card {
+    background-color: white;
+    border: 1px solid #E8E8E8;
+    padding: 0 15px;
+}
+
+#formContactAngular .flat-card.success p,
+#formContactAngular .flat-card.error p {
+    margin: 0.5em 0;
+}
+
+#formContactAngular .flat-card + .flat-card {
+    margin-top: 15px;
+}
+
+#formContactAngular .button-large {
+    text-align: center;
+    color: #FFF;
+}
+
+#formContactAngular .button-large.activate {
+    background-color: #27ae60;
+    border: 1px solid #1e8449;
+    box-shadow: 0 1px 0 #1e8449;
+}
+
+#formContactAngular .button-large.desactivate {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    box-shadow: 0 1px 0 #d35400;
+}
+
+#formContactAngular .success {
+    background-color: #27ae60;
+    border: 1px solid #1e8449;
+    box-shadow: 0 1px 0 #1e8449;
+    border-radius: 3px;
+}
+
+#formContactAngular .error {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    box-shadow: 0 1px 0 #d35400;
+    border-radius: 3px;
+}
+
+#formContactAngular .success p,
+#formContactAngular .error p {
+    color: #FFF;
+}

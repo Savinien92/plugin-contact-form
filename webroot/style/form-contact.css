@@ -1,0 +1,81 @@
+#modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1000;
+}
+
+#modalContent {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    width: 500px;
+
+}
+
+.no-visible {
+    display: none;
+}
+
+.is-visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overflow {
+    overflow: hidden;
+}
+
+.widget-title {
+    display: flex;
+}
+
+#close {
+    color: #707070;
+    position: absolute;
+    top: 20px;
+    right:20px;
+    cursor: pointer;
+}
+
+#close:hover {
+    color: black;
+}
+
+#modalContent form input,
+#modalContent form textarea {
+    margin-top: 20px;
+}
+
+.alert {
+    padding: 5px 10px;
+    margin-top: 5px;
+    background-color: lightcoral;
+    color: #FFF;
+    font-size: 1.6rem;
+}
+
+.not-allowed {
+    display: none;
+    margin-left: 10px;
+    color: lightcoral;
+}
+
+input[type="submit"][disabled="disabled"]:hover {
+    cursor: not-allowed;
+}
+
+input[type="submit"][disabled="disabled"]:hover + .not-allowed {
+    display: inline-block;
+}
+
+.validate {
+    display: none;
+}
+
+i.em {
+    margin-left: 10px;
+}
