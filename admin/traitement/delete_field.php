@@ -26,7 +26,7 @@ try {
 
     // Redirection
 
-    header("Location:" . $path . "wp-admin/options-general.php?page=contact_form_angular");
+    header("Location:" . $path . "wp-admin/options-general.php?page=plugin-contact-form");
     exit;
 
 }
@@ -37,7 +37,7 @@ catch (Exception $e) {
 
     notification("delFieldSuccess", "error", $notifText);
 
-    header("Location:" . $path . "wp-admin/options-general.php?page=contact_form_angular");
+    header("Location:" . $path . "wp-admin/options-general.php?page=plugin-contact-form");
     exit;
 
 }
