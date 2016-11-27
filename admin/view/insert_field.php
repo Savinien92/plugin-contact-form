@@ -1,4 +1,4 @@
-<form id="addFieldForm" action="../wp-content/plugins/form-contact-angular/admin/traitement/insert_field.php" method="post">
+<form id="addFieldForm" action="../wp-content/plugins/plugin-contact-form/admin/traitement/insert_field.php" method="post">
 
     <h2><?php echo __('Add a form field', 'contactform'); ?></h2>
 
