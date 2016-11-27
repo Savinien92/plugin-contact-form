@@ -208,6 +208,7 @@ function my_plugin_callback() {
 
                 <div class="flat-card">
                     <p><?php echo __('You can choose the fields present in your contact form, and also make them mandatory or not', 'contactform'); ?></p>
+                    <p><?php echo __('When you disable the form you must also disable the contact-link widget', 'contactform'); ?></p>
                 </div>
 
                 <?php

@@ -24,7 +24,7 @@ btnActivatePlugin.onclick = function(){
     console.log(window.location.href);
 
     jQuery.ajax({
-        url : '/wordpress/wp-content/plugins/form-contact-angular/admin/ajax/activate_form.php',
+        url : '/wordpress/wp-content/plugins/plugin-contact-form/admin/ajax/activate_form.php',
         success : function(){
 
             if(enable === "desactivate") {

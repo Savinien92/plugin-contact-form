@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Savi\n"
-"POT-Creation-Date: 2016-11-24 23:53+0100\n"
-"PO-Revision-Date: 2016-11-26 01:39+0100\n"
+"POT-Creation-Date: 2016-11-27 15:13+0100\n"
+"PO-Revision-Date: 2016-11-27 15:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: Savi\n"
 "Language: fr\n"
@@ -16,11 +16,111 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: index.php:203
+#: admin/traitement/delete_field.php:23
+msgid "The form field has been removed"
+msgstr "Le champ de formulaire a été supprimé"
+
+#: admin/traitement/delete_field.php:36
+msgid "The form field has not been deleted"
+msgstr "Le champ de formulaire n'a pas été supprimé"
+
+#: admin/traitement/insert_field.php:58
+msgid "The form field did not add"
+msgstr "Le champ de formulaire n'a pas ajouté"
+
+#: admin/traitement/insert_field.php:71
+msgid "The form field has not been added"
+msgstr "Le champ de formulaire n'a pas été ajouté"
+
+#: admin/traitement/update_fields.php:30
+msgid "Form fields have been modified"
+msgstr "Les champs de formulaire ont été modifiés"
+
+#: admin/traitement/update_fields.php:41
+msgid "Form fields have not been modified"
+msgstr "Les champs de formulaire n'ont pas été modifiés"
+
+#: admin/view/activate_form.php:19
+msgid "Activate or desactivate form"
+msgstr "Activer ou désactiver le formulaire"
+
+#: admin/view/activate_form.php:21
+msgid "Activate"
+msgstr "Activer"
+
+#: admin/view/activate_form.php:21
+msgid "Desactivate"
+msgstr "Désactiver"
+
+#: admin/view/insert_field.php:3
+msgid "Add a form field"
+msgstr "Ajouter un champ de formulaire"
+
+#: admin/view/insert_field.php:9
+msgid "Input"
+msgstr "Input"
+
+#: admin/view/insert_field.php:10
+msgid "Field name"
+msgstr "Nom de l'input"
+
+#: admin/view/insert_field.php:11 admin/view/update_fields.php:19
+msgid "Placeholder"
+msgstr "Placeholder"
+
+#: admin/view/insert_field.php:19
+msgid "Select"
+msgstr "Sélectionner"
+
+#: admin/view/insert_field.php:31 admin/view/update_fields.php:11
+msgid "Save field"
+msgstr "Enregistrer le champ"
+
+#: admin/view/insert_field.php:31
+msgid "Required fields"
+msgstr "Champs requis"
+
+#: admin/view/update_fields.php:17
+msgid "Field"
+msgstr "Champ"
+
+#: admin/view/update_fields.php:18
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: admin/view/update_fields.php:20
+msgid "Required field"
+msgstr "Champ requis"
+
+#: admin/view/update_fields.php:21
+msgid "Error message"
+msgstr "Message d'erreur"
+
+#: admin/view/update_fields.php:62 admin/view/update_fields.php:88
+msgid "yes"
+msgstr "oui"
+
+#: admin/view/update_fields.php:72 admin/view/update_fields.php:98
+msgid "no"
+msgstr "non"
+
+#: admin/view/update_fields.php:106
+msgid "Delete"
+msgstr "Supprimer"
+
+#: admin/view/update_fields.php:119
+msgid "Save changes"
+msgstr "Sauvegarder les modifications"
+
+#: admin/view/view_data.php:29
+msgid "Data table"
+msgstr "Tableau de données"
+
+#: index.php:204
 msgid "Contact Form Settings"
 msgstr "Paramètres du formulaire de contact"
 
-#: index.php:209
+#: index.php:210
 msgid ""
 "You can choose the fields present in your contact form, and also make them "
 "mandatory or not"
@@ -28,135 +128,40 @@ msgstr ""
 "Vous pouvez choisir les champs présents dans votre formulaire de contact et "
 "les rendre obligatoires ou non"
 
-#: index.php:253
+#: index.php:211
+msgid "When you disable the form you must also disable the contact-link widget"
+msgstr ""
+"Quand vous désactivez le formulaire il faut aussi désactiver le widget "
+"contact-link"
+
+#: index.php:254
 msgid "Votre version PHP est"
 msgstr "Votre version PHP est"
 
-#: index.php:254
+#: index.php:255
 msgid "Besoin 5.2.0+. Merci de faire une mise à jour."
 msgstr "Besoin 5.2.0+. Merci de faire une mise à jour."
 
-#: index.php:262
+#: index.php:264
 msgid "Contact link"
 msgstr "Lien contact"
 
-#: index.php:264
+#: index.php:266
 msgid "Move this widget to the sidebar view the form link"
 msgstr ""
 "Déplacer ce widget vers la barre latérale afficher le lien du formulaire"
 
-#: index.php:279
+#: index.php:281
 msgid "Contact us"
 msgstr "Nous contacter"
 
-#: index.php:313
+#: public/form.php:10
 msgid "Contact us !"
 msgstr "Contactez-nous !"
 
-#: index.php:314 index.php:429
-msgid "Close"
-msgstr "Fermer"
-
-#: index.php:428
+#: public/form.php:125
 msgid "Votre demande de contact à bien été envoyé"
 msgstr "Votre demande de contact à bien été envoyé"
 
-#: traitement/delete_field.php:23
-msgid "The form field has been removed"
-msgstr "Le champ de formulaire a été supprimé"
-
-#: traitement/delete_field.php:36
-msgid "The form field has not been deleted"
-msgstr "Le champ de formulaire n'a pas été supprimé"
-
-#: traitement/insert_field.php:58
-msgid "The form field did not add"
-msgstr "Le champ de formulaire n'a pas ajouté"
-
-#: traitement/insert_field.php:71
-msgid "The form field has not been added"
-msgstr "Le champ de formulaire n'a pas été ajouté"
-
-#: traitement/update_fields.php:30
-msgid "Form fields have been modified"
-msgstr "Les champs de formulaire ont été modifiés"
-
-#: traitement/update_fields.php:41
-msgid "Form fields have not been modified"
-msgstr "Les champs de formulaire n'ont pas été modifiés"
-
-#: view/activate_form.php:19
-msgid "Activate or desactivate form"
-msgstr "Activer ou désactiver le formulaire"
-
-#: view/activate_form.php:21
-msgid "Activate"
-msgstr "Activer"
-
-#: view/activate_form.php:21
-msgid "Desactivate"
-msgstr "Désactiver"
-
-#: view/insert_field.php:3
-msgid "Add a form field"
-msgstr "Ajouter un champ de formulaire"
-
-#: view/insert_field.php:9
-msgid "Input"
-msgstr "Input"
-
-#: view/insert_field.php:10
-msgid "Field name"
-msgstr "Nom de l'input"
-
-#: view/insert_field.php:11 view/update_fields.php:19
-msgid "Placeholder"
-msgstr "Placeholder"
-
-#: view/insert_field.php:19
-msgid "Select"
-msgstr "Sélectionner"
-
-#: view/insert_field.php:31 view/update_fields.php:11
-msgid "Save field"
-msgstr "Enregistrer le champ"
-
-#: view/insert_field.php:31
-msgid "Required fields"
-msgstr "Champs requis"
-
-#: view/update_fields.php:17
-msgid "Field"
-msgstr "Champ"
-
-#: view/update_fields.php:18
-msgid "Visibility"
-msgstr "Visibilité"
-
-#: view/update_fields.php:20
-msgid "Required field"
-msgstr "Champ requis"
-
-#: view/update_fields.php:21
-msgid "Error message"
-msgstr "Message d'erreur"
-
-#: view/update_fields.php:62 view/update_fields.php:88
-msgid "yes"
-msgstr "oui"
-
-#: view/update_fields.php:72 view/update_fields.php:98
-msgid "no"
-msgstr "non"
-
-#: view/update_fields.php:106
-msgid "Delete"
-msgstr "Supprimer"
-
-#: view/update_fields.php:119
-msgid "Save changes"
-msgstr "Sauvegarder les modifications"
-
-#: view/view_data.php:29
-msgid "Data table"
-msgstr "Tableau de données"
+#~ msgid "Close"
+#~ msgstr "Fermer"

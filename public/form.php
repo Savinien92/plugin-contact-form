@@ -11,7 +11,7 @@ if (!isset($_SESSION["msgSend"])) {
             <h2><div id="close"><i class="em em-cool"></i></div></h2>
         </div>
         <div ng-app="mainApp" ng-controller="formController">
-            <form id="angularForm" name="angularForm" method="POST" action="wp-content/plugins/form-contact-angular/admin/traitement/insert_form.php">
+            <form id="angularForm" name="angularForm" method="POST" action="wp-content/plugins/plugin-contact-form/admin/traitement/insert_form.php">
 
                 <?php
 

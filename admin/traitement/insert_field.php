@@ -61,7 +61,7 @@ try {
 
     // Redirection
 
-    header("Location:" . $path . "wp-admin/options-general.php?page=plugin-contact-form");
+    header("Location:" . $path . "wp-admin/options-general.php?page=contact_form_angular");
     exit;
 
 }
@@ -72,7 +72,7 @@ catch (Exception $e) {
 
     notification("addFieldSuccess", "error", $notifText);
 
-    header("Location:" . $path . "wp-admin/options-general.php?page=plugin-contact-form");
+    header("Location:" . $path . "wp-admin/options-general.php?page=contact_form_angular");
     exit;
 
 }
