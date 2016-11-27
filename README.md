@@ -1,4 +1,4 @@
-# Plugin-contact-form
+# Plugin contact form (Angular)
 This plugin sets up a contact form with database record (the name of the table is: wp_contact). This contact form is modal and uses the Angular.js technology for real-time verification of user input.
 
 WARNING: When you uninstall the plugin, it's removes the wp_contact table on your bdd (your contact's datas too).
