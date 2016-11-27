@@ -9,15 +9,15 @@ stable 1.1
 # Installation
 Step 1. Enable plug-in.
 
-Step 2. Enable the "contact-link" widget.
+Step 2. Go to settings > contact.
 
-Step 3. Go to settings > contact.
+Step 3. Add your form fields.
 
-Step 4. Add your form fields.
+Step 4. Configure your form fields, you can enable or disable fields and make them mandatory or not.
 
-Step 5. Configure your form fields, you can enable or disable fields and make them mandatory or not.
+Step 5. You can activate the form.
 
-Step 6. You can activate the form.
+Step 6. Enable the "contact-link" widget.
 
 DEACTIVATE: When you disable the form, you also need to disable the "contact-link" widget (go to appearance > widget)
 
