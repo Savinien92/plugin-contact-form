@@ -1,7 +1,7 @@
 # Plugin-contact-form
 This plugin sets up a contact form with database record (the name of the table is: wp_contact). This contact form is modal and uses the Angular.js technology for real-time verification of user input.
 
-CAUTION: When disabling the plugin, the plugin removes the wp_contact table and your contact's datas.
+WARNING: When you uninstall the plugin, it's removes the wp_contact table on your bdd (your contact's datas too).
 
 # Version
 stable 1.1
@@ -21,5 +21,17 @@ Step 6. Enable the "contact-link" widget.
 
 DEACTIVATE: When you disable the form, you also need to disable the "contact-link" widget (go to appearance > widget)
 
+# Uninstall
+
+WARNING: When you uninstall the plugin, it's removes the wp_contact table on your bdd (your contact's datas too).
+
 # Need to update
-It lacks the form check plugin to admin, you can contribut for fix-it !
+1. Validation of admin forms
+
+2. Admin forms security (js + php)
+
+3. Public forms security (php)
+
+4. Preventing data from being deleted when uninstalling the plugin
+
+5. Extract data to excel file
