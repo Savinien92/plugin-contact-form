@@ -24,7 +24,7 @@ btnActivatePlugin.onclick = function(){
     console.log(window.location.href);
 
     jQuery.ajax({
-        url : '/wordpress/wp-content/plugins/form-contact-angular/ajax/activate_form.php',
+        url : '/wordpress/wp-content/plugins/form-contact-angular/admin/ajax/activate_form.php',
         success : function(){
 
             if(enable === "desactivate") {
@@ -82,9 +82,9 @@ addFieldForm.onsubmit = function(evt) {
 
 }
 
-var modFieldForm = document.getElementById('modFieldForm'),
-    tr = modFieldForm.childNodes[3].childNodes[3].getElementsByTagName('tr');
-
-for(var i=0; i<tr.length; i++) {
-    console.log(tr[i]);
-}
+// var modFieldForm = document.getElementById('modFieldForm'),
+//     tr = modFieldForm.childNodes[3].childNodes[3].getElementsByTagName('tr');
+//
+// for(var i=0; i<tr.length; i++) {
+//     console.log(tr[i]);
+// }

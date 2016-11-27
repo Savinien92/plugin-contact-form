@@ -1,8 +1,8 @@
 <?php
 
-include_once ("../include/wp_query.php");
+include_once ("../../include/wp_query.php");
 
-include_once ("../include/function.php");
+include_once ("../../include/function.php");
 
 try {
 

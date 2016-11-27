@@ -2,16 +2,14 @@
 
 
 /**
-*Plugin Name: Angular Form Popup
-*Plugin URI:
-*Description: Ce plugin met en place un formulaire de contact avec enregistrement en base de donnée (le nom de la table est: wp_contact). Ce formulaire de contact est de type modal et utilise la technologie Angular.js pour une vérification en temps réel des données saisis par l'utilisateur.
-ATTENTION: Lors de la désactivation du plugin, celui-ci supprime la table wp_contact.
-*Author: Savinien MAIRE
-*Version: 1.1
-*Author URI:
-*Text Domain: contact-form
-*/
-
+ *Plugin Name: Angular Form Popup
+ *Plugin URI:
+ *Description: Ce plugin met en place un formulaire de contact avec enregistrement en base de donnée (le nom de la table est: wp_contact). Ce formulaire de contact est de type modal et utilise la technologie Angular.js pour une vérification en temps réel des données saisis par l'utilisateur.
+ *Author: Savinien MAIRE
+ *Version: 1.1
+ *Author URI:
+ *Text Domain: contact-form
+ */
 
 // ------------------------- GENERALE -------------------------
 
@@ -19,10 +17,10 @@ ATTENTION: Lors de la désactivation du plugin, celui-ci supprime la table wp_co
 
 session_start();
 
-
-
 function traduction() {
+
     load_plugin_textdomain('contactform', false, dirname(plugin_basename( __FILE__)) . '/languages');
+
 }
 add_action('plugins_loaded', 'traduction');
 
@@ -51,24 +49,6 @@ function form_activate() {
 
     return $value;
 }
-
-/**
- * Add Angular.js link to front ans back office
- * @author Savinien Maire
- */
-
-if(form_activate() == 1) {
-
-    function link_angular()
-    {
-
-        echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>';
-
-    }
-
-    add_action('wp_head', 'link_angular');
-}
-
 
 /**
  * Create table 'wp_contact' to database
@@ -153,6 +133,27 @@ function create_table_activate() {
 }
 register_activation_hook( __FILE__, 'create_table_activate');
 
+
+/**
+ * Add Angular.js link to front ans back office
+ * @author Savinien Maire
+ */
+
+
+function link_angular()
+{
+
+    if(form_activate() == 1) {
+
+        echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>';
+
+    }
+
+}
+
+add_action('wp_head', 'link_angular');
+
+
 /**
  * Add form setting js to back office
  * @author Savinien Maire
@@ -213,13 +214,13 @@ function my_plugin_callback() {
 
                 include_once ("include/notifications.php");
 
-                include_once ("view/activate_form.php");
+                include_once("admin/view/activate_form.php");
 
-                include_once ("view/insert_field.php");
+                include_once("admin/view/insert_field.php");
 
-                include_once ("view/update_fields.php");
+                include_once("admin/view/update_fields.php");
 
-                include_once ("view/view_data.php");
+                include_once("admin/view/view_data.php");
 
                 include_once ("include/notifications_unset.php");
 
@@ -238,56 +239,53 @@ add_action( 'admin_menu', 'my_plugin_menu' );
  * @author Savinien Maire
  */
 
-if (form_activate() == 1) {
 
-    if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
-        // PHP 5.3+ seulement
-        add_action('widgets_init', function () {
-            register_widget('Widget_contact_link');
-        });
-    } elseif (version_compare(PHP_VERSION, '5.2.0') >= 0) {
-        // PHP 5.2+
-        add_action('widgets_init', create_function('', 'return register_widget("Widget_contact_link");'));
-    } else {
-        // Petit message si la version PHP est inférieure à 5.2.0
-        echo __('Votre version PHP est', 'texte-domaine') . ' ' . phpversion() . '. ';
-        echo __('Besoin 5.2.0+. Merci de faire une mise à jour.', 'texte-domaine');
+if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+    // PHP 5.3+ seulement
+    add_action('widgets_init', function () {
+        register_widget('Widget_contact_link');
+    });
+} elseif (version_compare(PHP_VERSION, '5.2.0') >= 0) {
+    // PHP 5.2+
+    add_action('widgets_init', create_function('', 'return register_widget("Widget_contact_link");'));
+} else {
+    // Petit message si la version PHP est inférieure à 5.2.0
+    echo __('Votre version PHP est', 'texte-domaine') . ' ' . phpversion() . '. ';
+    echo __('Besoin 5.2.0+. Merci de faire une mise à jour.', 'texte-domaine');
+}
+
+
+class Widget_contact_link extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'social-widget',
+            __( 'Contact link', 'contact-form' ),
+            array(
+                'description' => __( 'Move this widget to the sidebar view the form link', 'contact-form' ),
+            )
+        );
     }
 
+    public function widget($args, $instance) {
 
-    class Widget_contact_link extends WP_Widget {
+        echo $args['before_widget'];
 
-        function __construct() {
-            parent::__construct(
-                'social-widget',
-                __( 'Contact link', 'contact-form' ),
-                array(
-                    'description' => __( 'Move this widget to the sidebar view the form link', 'contact-form' ),
-                )
-            );
-        }
+        ?>
 
-        public function widget($args, $instance) {
+        <div class="textwidget">
 
-            echo $args['before_widget'];
+            <div id="contactUs">
 
-            ?>
-
-            <div class="textwidget">
-
-                <div id="contactUs">
-
-                    <a href="#" id="contactUsLink"><?php echo __('Contact us', 'contactform'); ?></a>
-
-                </div>
+                <a href="#" id="contactUsLink"><?php echo __('Contact us', 'contactform'); ?></a>
 
             </div>
 
-            <?php
+        </div>
 
-            echo $args['after_widget'];
-        }
+        <?php
 
+        echo $args['after_widget'];
     }
 
 }
@@ -300,147 +298,16 @@ if (form_activate() == 1) {
  */
 
 
-if(form_activate() == 1) {
+function custom_content_after_body_open_tag() {
 
-    function custom_content_after_body_open_tag() {
+    if(form_activate() == 1) {
 
-        if (!isset($_SESSION["msgSend"])) {
-
-        ?>
-
-        <div id="modal" class="no-visible">
-            <div id="modalContent">
-                <div id="modalContentHeader">
-                    <h2 class="widget-title"><?php echo __('Contact us !', 'contactform'); ?><i class="em em-rocket"></i></h2>
-                    <div id="close"><?php echo __('Close', 'contactform'); ?></div>
-                </div>
-                <div ng-app="mainApp" ng-controller="formController">
-                    <form id="angularForm" name="angularForm" method="POST" action="wp-content/plugins/form-contact-angular/traitement/insert_form.php">
-
-                        <?php
-
-                        global $wpdb;
-
-                        $sql = "SELECT * FROM wp_contact_field WHERE field_view=1";
-
-                        $results = $wpdb->get_results($sql) or die(mysql_error());
-
-                        foreach( $results as $row ) {
-
-                            $type = $row->field_type;
-                            $name = $row->field_name;
-                            $placeholder = $row->field_placeholder;
-                            $req = $row->field_req;
-                            $err = $row->field_err;
-                            $tagname = $row->field_tagname;
-
-                            if ($tagname == "input") {
-
-                                echo '<input type="' . $type . '" name="' . $name . '" placeholder="' . $placeholder . '" ng-model="' . $name . '"';
-
-                                if ($req == 1) {
-
-                                    echo ' required';
-
-                                }
-
-                                echo '>';
-
-                                if ($req == 1) {
-
-                                    echo '<div ng-show="angularForm.$submitted || angularForm.' . $name . '.$touched">';
-
-                                    echo '<div class="alert" ng-show="angularForm.' . $name . '.$error.required">' . $err . '</div>';
-
-                                    echo '</div>';
-
-                                }
-
-                            }
-
-                            if ($tagname == "textarea") {
-
-                                echo '<textarea name="' . $name . '" placeholder="' . $placeholder . '" ng-model="' . $name . '"';
-
-                                if ($req == 1) {
-
-                                    echo ' required';
-
-                                }
-
-                                echo '></textarea>';
-
-                                if ($req == 1) {
-
-                                    echo '<div ng-show="angularForm.$submitted || angularForm.' . $name . '.$touched">';
-
-                                    echo '<div class="alert" ng-show="angularForm.' . $name . '.$error.required">' . $err . '</div>';
-
-                                    echo '</div>';
-
-                                }
-
-                            }
-
-                        }
-
-                        $sql = "SELECT field_name FROM wp_contact_field WHERE field_view=1 and field_req=1";
-
-                        $results = $wpdb->get_results($sql);
-
-                        if (empty($results) === true) {
-
-                            echo '<input type="submit" value="Send" ng-model="submit">';
-
-                        } else {
-
-                            $ngDesabled = "";
-
-                            foreach ( $results as $row ) {
-
-                                $ngDesabled = $ngDesabled . "!" . $row->field_name . " || ";
-
-                            }
-
-                            $ngDesabled = substr($ngDesabled, 0, -4);
-
-                            echo '<input type="submit" value="Send" ng-model="submit" ng-disabled="' . $ngDesabled . '">';
-
-                        }
-
-                        echo '<div class="not-allowed">Humm .. missing things</div>';
-
-                        ?>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <?php
-
-        } else {
-
-        ?>
-
-            <div id="modal" class="is-visible">
-                <div id="modalContent">
-                    <div id="modalContentHeader">
-                        <h3 class="widget-title"><?php echo __('Votre demande de contact à bien été envoyé', 'contactform'); ?><i class="em em---1"></i></h3>
-<!--                        <div id="close" style="top: auto; bottom: 20px">--><?php //echo __('Close', 'contactform'); ?><!--</div>-->
-                    </div>
-                </div>
-            </div>
-
-        <?php
-
-        unset($_SESSION["msgSend"]);
-
-        }
+        include_once ("public/form.php");
 
     }
-    add_action('wp_footer', 'custom_content_after_body_open_tag');
+
 }
+add_action('wp_footer', 'custom_content_after_body_open_tag');
 
 
 /**
@@ -449,17 +316,17 @@ if(form_activate() == 1) {
  */
 
 
-if(form_activate() == 1) {
+function form_angular_js()
+{
 
-    function form_angular_js()
-    {
+    if(form_activate() == 1) {
 
         wp_enqueue_script('form-contact-angular', esc_url(plugins_url('webroot/js/form-contact.js', __FILE__)), array(), '1.0', true);
 
     }
 
-    add_action('wp_enqueue_scripts', 'form_angular_js');
 }
+add_action('wp_enqueue_scripts', 'form_angular_js');
 
 
 /**
@@ -468,19 +335,20 @@ if(form_activate() == 1) {
  */
 
 
-if(form_activate() == 1) {
+function insert_css_head()
+{
 
-    function insert_css_head()
-    {
+    if(form_activate() == 1) {
 
-        // Ajout du css dans le Header
-        wp_register_style('form-contact-angular-css', esc_url(plugins_url('webroot/style/form-contact.css', __FILE__)));
-        wp_enqueue_style('form-contact-angular-css');
+    // Ajout du css dans le Header
+    wp_register_style('form-contact-angular-css', esc_url(plugins_url('webroot/style/form-contact.css', __FILE__)));
+    wp_enqueue_style('form-contact-angular-css');
 
     }
 
-    add_action('wp_enqueue_scripts', 'insert_css_head');
 }
+add_action('wp_enqueue_scripts', 'insert_css_head');
+
 
 function link_emojicss()
 {

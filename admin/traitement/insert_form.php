@@ -1,6 +1,6 @@
 <?php
 
-include_once ("../include/wp_query.php");
+include_once ("../../include/wp_query.php");
 
 try {
 
@@ -15,8 +15,6 @@ try {
 // Supprimer contact_id et contact_date
     $result = array_splice($col, 1);
     $result = array_merge($result);
-
-
 
 
 // Recherche des fields non visible
@@ -108,7 +106,7 @@ try {
 
     // Redirection
 
-    header("Location:../../../../index.php");
+    header("Location:../../../../../index.php");
 }
 
 catch (Exception $e) {
@@ -119,6 +117,6 @@ catch (Exception $e) {
 
     }
 
-    header("Location:../../../../index.php");
+    header("Location:../../../../../index.php");
 
 }

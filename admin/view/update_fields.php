@@ -6,7 +6,7 @@ $nb_input = $wpdb->get_var("SELECT count(field_id) FROM wp_contact_field");
 
 if($nb_input > 0) { ?>
 
-<form id="modFieldForm" action="../wp-content/plugins/form-contact-angular/traitement/update_fields.php" method="post">
+<form id="modFieldForm" action="../wp-content/plugins/form-contact-angular/admin/traitement/update_fields.php" method="post">
 
     <h2><?php echo __('Save field', 'contactform'); ?></h2>
 
@@ -101,7 +101,7 @@ if($nb_input > 0) { ?>
 
             echo '<td><textarea type="text" name="' . $name . '-err-'.$i.'">' . $err . '</textarea></td>';
 
-            echo '<td><a href="../wp-content/plugins/form-contact-angular/traitement/delete_field.php?field_id=' . $id . '&fcn=' . $name . '">';
+            echo '<td><a href="../wp-content/plugins/form-contact-angular/admin/traitement/delete_field.php?field_id=' . $id . '&fcn=' . $name . '">';
 
             echo __('Delete', 'contactform');
 
